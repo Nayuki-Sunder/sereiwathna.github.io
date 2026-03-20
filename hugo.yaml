@@ -1,4 +1,52 @@
 baseURL: "https://Nayuki-Sunder.github.io/"
-locale: en-us
+languageCode: en-us
 title: In Construction
 theme: ["PaperMod"]
+
+# 1. Navigation Menu Configuration
+menu:
+  main:
+    - identifier: posts
+      name: Posts
+      url: /posts/
+      weight: 10
+    - identifier: archive
+      name: Archive
+      url: /archives/
+      weight: 20
+    - identifier: search
+      name: Search
+      url: /search/
+      weight: 30
+    - identifier: tags
+      name: Tags
+      url: /tags/
+      weight: 40
+    - identifier: about
+      name: About
+      url: /about/
+      weight: 50
+
+# 2. PaperMod Specific Settings
+params:
+  # Enable the search feature
+  fuseOpts:
+    isCaseSensitive: false
+    shouldSort: true
+    location: 0
+    distance: 100
+    threshold: 0.4
+    minMatchCharLength: 0
+    keys: ["title", "permalink", "summary", "content"]
+  
+  # Display the "Search" and "Archive" icons if you want them
+  ShowCodeCopyButtons: true
+  ShowReadingTime: true
+  ShowBreadCrumbs: true
+  
+  # This makes the "Search" and "Archive" layouts work
+  outputs:
+    home:
+      - HTML
+      - RSS
+      - JSON # Necessary for Search to work
